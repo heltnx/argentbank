@@ -1,7 +1,14 @@
 import React from 'react';
 // layouts
-import NavBar from '../components/layouts/NavBar';
-import Footer from '../components/layouts/Footer';
+import NavBar from '../../components/layouts/NavBar';
+import Footer from '../../components/layouts/Footer';
+// images
+import ChatIcon from '../../assets/img/icon-chat.png';
+import MoneyIcon from '../../assets/img/icon-money.png';
+import SecurityIcon from '../../assets/img/icon-security.png';
+// style
+import '../../assets/main.css'
+import './home.css'
 
 const HomePage = () => {
     return (
@@ -23,7 +30,7 @@ const HomePage = () => {
                 <section className="features">
                     <h2 class="sr-only">Features</h2>
                     <div class="feature-item">
-                        <img src="./img/icon-chat.png" alt="Chat Icon" class="feature-icon" />
+                        <img src={ChatIcon} alt="Chat Icon" className="feature-icon" />
                         <h3 class="feature-item-title">You are our #1 priority</h3>
                         <p>
                             Need to talk to a representative? You can get in touch through our
@@ -32,9 +39,9 @@ const HomePage = () => {
                     </div>
                     <div class="feature-item">
                         <img
-                            src="./img/icon-money.png"
-                            alt="Chat Icon"
-                            class="feature-icon"
+                            src={MoneyIcon}
+                            alt="Money Icon"
+                            className="feature-icon"
                         />
                         <h3 class="feature-item-title">More savings means higher rates</h3>
                         <p>
@@ -43,9 +50,9 @@ const HomePage = () => {
                     </div>
                     <div class="feature-item">
                         <img
-                            src="./img/icon-security.png"
-                            alt="Chat Icon"
-                            class="feature-icon"
+                            src={SecurityIcon}
+                            alt="Security Icon"
+                            className="feature-icon"
                         />
                         <h3 class="feature-item-title">Security you can trust</h3>
                         <p>
