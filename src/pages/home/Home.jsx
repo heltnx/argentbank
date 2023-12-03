@@ -1,7 +1,7 @@
 import React from 'react';
 // layouts
-import NavBar from '../../components/layouts/Navbar/NavBar';
-import Footer from '../../components/layouts/Footer/Footer';
+import NavBar from '../../Layouts/Navbar/NavBar';
+import Footer from '../../Layouts/Footer/Footer';
 // images
 import ChatIcon from '../../assets/img/icon-chat.png';
 import MoneyIcon from '../../assets/img/icon-money.png';
