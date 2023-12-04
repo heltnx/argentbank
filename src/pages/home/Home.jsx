@@ -1,7 +1,6 @@
 import React from 'react';
 // layouts
-import NavBar from '../../Layouts/Navbar/NavBar';
-import Footer from '../../Layouts/Footer/Footer';
+import Layout from '../../Layouts/Layout';
 // images
 import ChatIcon from '../../assets/img/icon-chat.png';
 import MoneyIcon from '../../assets/img/icon-money.png';
@@ -10,13 +9,10 @@ import SecurityIcon from '../../assets/img/icon-security.png';
 import '../../assets/main.css'
 import './home.css'
 
-const HomePage = () => {
+const Home = () => {
     return (
-        <div>
-
-            <NavBar />
-
-            <main>
+        <Layout>
+            <div classname="home">
                 <div className="hero">
                     <section className="hero-content">
                         <h2 className="sr-only">Promoted Content</h2>
@@ -62,11 +58,9 @@ const HomePage = () => {
                     </div>
                 </section>
 
-            </main>
-
-            <Footer />
-        </div>
+            </div>
+        </Layout>
     );
 };
 
-export default HomePage;
+export default Home;
