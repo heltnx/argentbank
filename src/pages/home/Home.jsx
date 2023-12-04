@@ -12,7 +12,7 @@ import './home.css'
 const Home = () => {
     return (
         <Layout>
-            <div classname="home">
+            <div className="home">
                 <div className="hero">
                     <section className="hero-content">
                         <h2 className="sr-only">Promoted Content</h2>
