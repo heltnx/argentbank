@@ -1,19 +1,22 @@
+// Router.js
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 /*pages */
 import Home from '../pages/home/home.jsx';
 import Sign from '../pages/sign/Sign.jsx';
+import User from '../pages/users/User.jsx';
 
-const Router = () => {
+const AppRouter = () => {
     return (
-        <BrowserRouter>
+        <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Sign" element={<Sign />} />
+                <Route path="/User" element={<User />} />
             </Routes>
-        </BrowserRouter>
+        </Router>
     );
 };
 
-export default Router;
+export default AppRouter;

@@ -3,7 +3,6 @@ import React from 'react';
 import Layout from '../../Layouts/Layout';
 import SignForm from '../../Layouts/SignForm/SignForm';
 // style
-import '../../assets/main.css'
 import './sign.css'
 
 const Sign = () => {

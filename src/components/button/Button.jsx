@@ -1,10 +1,10 @@
 import React from 'react';
+import './button.css'
 
 const Button = ({ text, onClick }) => (
-    <a href="./user.html" className="sign-in-button" onClick={onClick}>
+    <button className="comp-button" onClick={onClick}>
         {text}
-    </a>
+    </button>
 );
-
 
 export default Button;
