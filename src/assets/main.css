@@ -13,6 +13,12 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  display: flex;
+  flex: 1 1;
+  min-height: 85vh;
+}
+
 .main {
   flex: 1;
 }

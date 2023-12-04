@@ -1,6 +1,6 @@
 // SignInForm.js
 import React from 'react';
-import Input from '../../components/Checkbox/Checkbox';
+import Input from '../../components/Input/Input';
 import Checkbox from '../../components/Checkbox/Checkbox';
 import Button from '../../components/button/Button';
 
