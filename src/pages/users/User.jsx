@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 // layouts
 import Layout from '../../Layouts/Layout';
 // components
+import UserHeader from '../../components/UserHeader/UserHeader'
 import Account from '../../components/UserAccompte/UserAccount';
-import Button from '../../components/button/Button'
 // style
 import './user.css'
 
@@ -22,12 +21,7 @@ const User = () => {
     return (
         <Layout className='user'>
             <main className="main bg-dark">
-                <div className="header">
-                    <h1>Welcome back<br />Tony Jarvis!</h1>
-                    <Link to="/edit-name" className='edit-button'>
-                        <Button text="Edit Name" onClick={handleEditName} />
-                    </Link>
-                </div>
+                <UserHeader userName="Tony Jarvis" onEditNameClick={handleEditName} />
                 <h2 className="sr-only">Accounts</h2>
                 <Account
                     title="Argent Bank Checking (x8349)"
