@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // layouts
 import Layout from '../../Layouts/Layout';
 // components
-import Account from '../../components/Accounts/Account';
+import Account from '../../components/UserAccompte/UserAccount';
 import Button from '../../components/button/Button'
 // style
 import './user.css'
