@@ -22,19 +22,22 @@ const NavBar = ({ isAuthenticated, userName }) => {
 
                 {isAuthenticated ? (
                     <div>
-                        <a className="main-nav-item" href="./user.html">
+                        <Link to="/user" className="main-nav-item">
                             <i className="fa fa-user-circle"></i>
                             {userName}
-                        </a>
-                        <a className="main-nav-item" href="./index.html">
+                        </Link>
+                        <Link to="/" className='main-nav-item'>
                             <i className="fa fa-sign-out"></i>
                             Sign Out
-                        </a>
+                        </Link>
                     </div>
+
                 ) : (
-                    <Link to="/sign" className="main-nav-item">
-                        <i className="fa fa-user-circle"></i> Sign In
-                    </Link>
+                    <div>
+                        <Link to="/sign" className="main-nav-item">
+                            <i className="fa fa-user-circle"></i> Sign In
+                        </Link>
+                    </div>
                 )}
             </div>
         </nav>
