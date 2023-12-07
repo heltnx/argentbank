@@ -1,6 +1,6 @@
 // SignInForm.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 // components
 import Input from '../../components/Input/Input';
 import Checkbox from '../../components/Checkbox/Checkbox';
@@ -9,8 +9,12 @@ import Button from '../../components/button/Button';
 import './signForm.css'
 
 const SignForm = () => {
+
+    const navigate = useNavigate();
+
     const handleSignIn = () => {
-        // logique de connexion ici
+        navigate("/user");
+        // logique de connexion
         console.log('Sign form click');
     };
 
@@ -19,10 +23,9 @@ const SignForm = () => {
             <Input type="text" id="username" label="Username" />
             <Input type="password" id="password" label="Password" />
             <Checkbox id="remember-me" label="Remember me" />
-            <Link to="/User" className='sign-in-button'>
-                <Button className="comp-button" text="Sign In" onClick={handleSignIn} />
-            </Link>
+            <Button className="sign-in-button comp-button" text="Sign In" onClick={handleSignIn} />
         </form>
     );
 };
+
 export default SignForm;

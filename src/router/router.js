@@ -12,8 +12,8 @@ const AppRouter = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/Sign" element={<Sign />} />
-                <Route path="/User" element={<User />} />
+                <Route path="/sign" element={<Sign />} />
+                <Route path="/user" element={<User />} />
             </Routes>
         </Router>
     );
