@@ -14,7 +14,7 @@ const User = ({ userName }) => {
     };
 
     const handleViewTransactions = () => {
-        // Logique pour gérer la vue des transactions
+        // Logique pour gérer view transactions
         console.log('View Transactions clicked');
     };
 

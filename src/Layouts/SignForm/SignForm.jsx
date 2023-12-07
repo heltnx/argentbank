@@ -22,7 +22,6 @@ const SignForm = () => {
             <Link to="/User" className='sign-in-button'>
                 <Button className="comp-button" text="Sign In" onClick={handleSignIn} />
             </Link>
-
         </form>
     );
 };
