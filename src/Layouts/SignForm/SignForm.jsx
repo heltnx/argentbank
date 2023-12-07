@@ -20,7 +20,7 @@ const SignForm = () => {
             <Input type="password" id="password" label="Password" />
             <Checkbox id="remember-me" label="Remember me" />
             <Link to="/User" className='sign-in-button'>
-                <Button className="comp-button" text="Edit Name" onClick={handleSignIn} />
+                <Button className="comp-button" text="Sign In" onClick={handleSignIn} />
             </Link>
 
         </form>
