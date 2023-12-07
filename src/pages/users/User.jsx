@@ -7,9 +7,9 @@ import Account from '../../components/UserAccompte/UserAccount';
 // style
 import './user.css'
 
-const User = () => {
+const User = ({ userName }) => {
     const handleEditName = () => {
-        // Logique pour gérer l'édition du nom
+        // Logique pour gérer l'édit Name button
         console.log('Edit Name clicked');
     };
 
@@ -21,7 +21,7 @@ const User = () => {
     return (
         <Layout className='user'>
             <main className="main bg-dark">
-                <UserHeader userName="Tony Jarvis" onEditNameClick={handleEditName} />
+                <UserHeader onEditNameClick={handleEditName} />
                 <h2 className="sr-only">Accounts</h2>
                 <Account
                     title="Argent Bank Checking (x8349)"
