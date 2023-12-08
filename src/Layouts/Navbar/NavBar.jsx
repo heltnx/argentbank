@@ -38,20 +38,24 @@ const NavBar = () => {
                 <h1 className="sr-only">Argent Bank</h1>
             </Link>
             <div>
-
+                {/* condition pour la connection */}
                 {isAuthenticated ? (
+
                     <div>
+                        {/* Lien vers la page du profil utilisateur */}
                         <Link to="/user" className="main-nav-item">
                             <i className="fa fa-user-circle"></i>
                             {currentUserProfile.userName}
                         </Link>
+
+                        {/* Lien pour déclencher la fonction de déconnexion */}
                         <Link to="/" onClick={handleSignOut} className='main-nav-item'>
                             <i className="fa fa-sign-out"></i>
                             Sign Out
                         </Link>
                     </div>
-
                 ) : (
+                    //Lien vers la page de connexion
                     <div>
                         <Link to="/sign" className="main-nav-item">
                             <i className="fa fa-user-circle"></i> Sign In
