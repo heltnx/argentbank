@@ -8,7 +8,7 @@ import SecurityIcon from '../../assets/img/icon-security.png';
 // components
 import Feature from '../../components/Features/Feature';
 // style
-import '../../assets/main.css'
+import '../../assets/css/main.css'
 import './home.css'
 
 const Home = () => {
