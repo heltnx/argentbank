@@ -13,10 +13,15 @@ export const userSlice = createSlice({
             state.userLoggedIn = true;
             state.currentUserProfile = profile.payload;
         },
+        // userLoggedOut case reducer
+        userLoggedOut: (state) => {
+            state.userLoggedIn = false;
+            state.currentUserProfile = {};
+        },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setUser } = userSlice.actions
+export const { setUser, userLoggedOut } = userSlice.actions
 
 export default userSlice.reducer

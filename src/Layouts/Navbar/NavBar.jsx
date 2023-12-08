@@ -2,17 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // images
 import argentBankLogo from '../../assets/img/argentBankLogo.png';
-//style
+// style
 import './navbar.css';
-import { useSelector } from 'react-redux';
+// redux
+import { useSelector, useDispatch } from 'react-redux';
+import { userLoggedOut } from '../../features/user/userSlice.js';
 
 const NavBar = () => {
 
+    // Utilisation du hook useSelector pour obtenir l'état du store Redux
     const isAuthenticated = useSelector((state) => state.user.userLoggedIn);
     const currentUserProfile = useSelector((state) => state.user.currentUserProfile);
 
-    return (
+    // Utilisation du hook useDispatch pour obtenir la fonction dispatch du store Redux
+    const dispatch = useDispatch();
 
+    // Fonction gérant la déconnexion de l'utilisateur
+    const handleSignOut = () => {
+
+        // Dispatche l'action "userLoggedOut" pour gérer la déconnexion dans le store Redux
+        dispatch(userLoggedOut());
+
+        // Efface le localStorage
+        localStorage.clear();
+    };
+
+    return (
         <nav className="main-nav">
             <Link to="/" className="main-nav-logo">
                 <img
@@ -30,7 +45,7 @@ const NavBar = () => {
                             <i className="fa fa-user-circle"></i>
                             {currentUserProfile.userName}
                         </Link>
-                        <Link to="/" className='main-nav-item'>
+                        <Link to="/" onClick={handleSignOut} className='main-nav-item'>
                             <i className="fa fa-sign-out"></i>
                             Sign Out
                         </Link>
