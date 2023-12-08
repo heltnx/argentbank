@@ -1,7 +1,7 @@
 import React from 'react';
 // layouts
 import Layout from '../../Layouts/Layout';
-import SignForm from '../../Layouts/SignForm/SignForm';
+import SignForm from '../../Layouts/form_sign_in/SignForm';
 // style
 import './sign.css'
 
