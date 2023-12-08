@@ -19,6 +19,10 @@ body {
   min-height: 85vh;
 }
 
+.error {
+  color: red;
+}
+
 .main {
   flex: 1;
 }

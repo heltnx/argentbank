@@ -1,4 +1,3 @@
-// SignInForm.js
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation, useGetProfileMutation } from '../../services/user';
@@ -7,6 +6,7 @@ import Checkbox from '../../components/Checkbox/Checkbox';
 import Button from '../../components/button/Button';
 // style
 import './signForm.css'
+//
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../features/user/userSlice';
 
@@ -25,13 +25,24 @@ const SignForm = () => {
             email: email,
             password: password,
         });
-        if (response.data !== "undefined") {
+        if (response.data !== undefined && response.data.body !== undefined) {
             const token = response.data.body.token;
             localStorage.setItem("token", token);
+
             const profile = await getProfileMutation(`Bearer ${token}`);
-            console.log(profile.data.body);
-            dispatch(setUser(profile.data.body));
-            navigate("/user");
+
+            // Assurez-vous que profile.data.body est défini avant de l'utiliser
+            if (profile.data !== undefined && profile.data.body !== undefined) {
+                console.log(profile.data.body);
+                dispatch(setUser(profile.data.body));
+                navigate("/user");
+            } else {
+                // Gérer le cas où profile.data.body est undefined
+                console.error("La réponse du profil est invalide.", profile);
+            }
+        } else {
+            // Gérer le cas où response.data.body est undefined
+            console.error("La réponse de la requête est invalide.", response);
         }
 
         setEmail("");
@@ -65,7 +76,7 @@ const SignForm = () => {
             </div>
             <Checkbox id="remember-me" label="Remember me" />
             <Button className="sign-in-button comp-button" text="Sign In" onClick={handleSignIn} />
-            {isError ? <p>Identifant ou mot de passe erroné</p> : ""}
+            {isError ? <p className='error'>Identifant ou mot de passe erroné</p> : ""}
         </form>
     );
 };
