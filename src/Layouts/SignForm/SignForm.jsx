@@ -31,9 +31,8 @@ const SignForm = () => {
 
             const profile = await getProfileMutation(`Bearer ${token}`);
 
-            // Assurez-vous que profile.data.body est défini avant de l'utiliser
+            // condition "profile.data.body" est défini avant de l'utiliser
             if (profile.data !== undefined && profile.data.body !== undefined) {
-                console.log(profile.data.body);
                 dispatch(setUser(profile.data.body));
                 navigate("/user");
             } else {
