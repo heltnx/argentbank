@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Button from '../../components/button/Button';
+import Button from '../button/Button';
 
 const HeaderComponent = ({ onEditNameClick }) => {
     // Utilise useSelector pour extraire currentUserProfile du state Redux

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation, useGetProfileMutation } from '../../services/user';
 // components
-import Checkbox from '../../components/Checkbox/Checkbox';
+import Checkbox from '../../components/checkbox/Checkbox';
 import Button from '../../components/button/Button';
 // style
 import './signForm.css'

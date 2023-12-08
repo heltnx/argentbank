@@ -6,7 +6,7 @@ import ChatIcon from '../../assets/img/icon-chat.png';
 import MoneyIcon from '../../assets/img/icon-money.png';
 import SecurityIcon from '../../assets/img/icon-security.png';
 // components
-import Feature from '../../components/Features/Feature';
+import Feature from '../../components/features/Feature';
 // style
 import '../../assets/css/main.css'
 import './home.css'

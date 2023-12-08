@@ -2,8 +2,8 @@ import React from 'react';
 // layouts
 import Layout from '../../Layouts/Layout';
 // components
-import UserHeader from '../../components/UserHeader/UserHeader'
-import Account from '../../components/UserAccompte/UserAccount';
+import UserHeader from '../../components/user_header/UserHeader'
+import Account from '../../components/user_accompte/UserAccount';
 // style
 import './user.css'
 
