@@ -4,17 +4,29 @@ export const userApi = createApi({
     reducerPath: 'userApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/api/v1/user' }),
     endpoints: (builder) => ({
-        login: builder.query({
-            query: ({ email, password }) => ({
+        login: builder.mutation({
+            query: (credentials) => ({
                 url: "/login",
                 method: "POST",
-                body: { email, password },
+                body: credentials,
                 headers: {
                     "Content-Type": "application/json",
+                },
+            }),
+        }),
+        getProfile: builder.mutation({
+            query: (token) => ({
+                url: "/profile",
+                method: "POST",
+                body: "",
+                headers: {
+                    "Content-Type": "application/json",
+                    accept: "application/json",
+                    Authorization: token,
                 },
             }),
         }),
     }),
 });
 
-export const { useLoginQuery } = userApi;
+export const { useLoginMutation, useGetProfileMutation } = userApi;

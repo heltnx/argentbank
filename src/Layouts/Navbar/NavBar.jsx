@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import argentBankLogo from '../../assets/img/argentBankLogo.png';
 //style
 import './navbar.css';
+import { useSelector } from 'react-redux';
 
-const NavBar = ({ isAuthenticated, userName }) => {
+const NavBar = () => {
+
+    const isAuthenticated = useSelector((state) => state.user.userLoggedIn);
+    const currentUserProfile = useSelector((state) => state.user.currentUserProfile);
 
     return (
 
@@ -24,7 +28,7 @@ const NavBar = ({ isAuthenticated, userName }) => {
                     <div>
                         <Link to="/user" className="main-nav-item">
                             <i className="fa fa-user-circle"></i>
-                            {userName}
+                            {currentUserProfile.userName}
                         </Link>
                         <Link to="/" className='main-nav-item'>
                             <i className="fa fa-sign-out"></i>
