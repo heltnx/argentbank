@@ -8,20 +8,15 @@ import Account from '../../components/user_accompte/UserAccount';
 import './user.css'
 
 const User = ({ userName }) => {
-    const handleEditName = () => {
-        // Logique pour gérer l'édit Name button
-        console.log('Edit Name clicked');
-    };
 
     const handleViewTransactions = () => {
-        // Logique pour gérer view transactions
-        console.log('View Transactions clicked');
+
     };
 
     return (
         <Layout className='user'>
             <main className="main bg-dark">
-                <UserHeader onEditNameClick={handleEditName} />
+                <UserHeader />
                 <h2 className="sr-only">Accounts</h2>
                 <Account
                     title="Argent Bank Checking (x8349)"

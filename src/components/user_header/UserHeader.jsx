@@ -14,7 +14,7 @@ const HeaderComponent = ({ onEditNameClick }) => {
             <h1>Welcome back<br />{currentUserProfile.userName} !</h1>
 
             {/* Utilise un lien de React Router pour rediriger vers la page d'édition du nom */}
-            <Link to="/edit-name" className='edit-button'>
+            <Link to="/edit_name" className='edit-button'>
                 <Button text="Edit Name" onClick={onEditNameClick} />
             </Link>
 
