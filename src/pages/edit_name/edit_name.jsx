@@ -1,17 +1,16 @@
 import React from 'react';
 // layouts
-import Layout from '../../Layouts/Layout';
+import HeaderEdit from '../../Layouts/header_edit/Header_edit';
 // style
 
 const EditName = () => {
     return (
-        <Layout>
-            <section>
-                <div className='sign-in-content' >
-                    <h1>Edit Name</h1>
-                </div>
-            </section>
-        </Layout>
+
+        <section>
+            <HeaderEdit />
+
+        </section>
+
     )
 };
 
