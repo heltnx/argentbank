@@ -1,18 +1,13 @@
-.header {
+.header-edit {
     width: 90%;
     margin: 0 auto;
 }
 
-nav img {
-    width: 3.5rem;
-
-}
-
 .nav-edit {
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
-.main-nav-logo::before {
+.nav-edit .main-nav-logo::before {
     content: "";
     background-image: url('../../assets/img/light.png');
     background-repeat: no-repeat;
@@ -23,7 +18,33 @@ nav img {
 }
 
 .main-nav-icon {
-    width: 300px;
     display: flex;
+}
+
+.main-nav-icon img {
+    width: 30px;
+    margin-right: 30px;
+}
+
+.user-param,
+.user-off {
+    margin-top: 8px;
+}
+
+.user-edit-profile img {
+    width: 45px;
+}
+
+.user-edit-profile {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    width: fit-content;
+}
+
+.user-edit-profile p {
+    font-family: inherit;
+    margin-right: 15px;
+    font-size: 20px;
+    color: #00BC78;
 }
