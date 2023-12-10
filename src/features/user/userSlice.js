@@ -24,5 +24,4 @@ export const userSlice = createSlice({
 
 // Des créateurs d'action sont générés pour chaque cas.
 export const { setUser, userLoggedOut } = userSlice.actions
-
 export default userSlice.reducer
