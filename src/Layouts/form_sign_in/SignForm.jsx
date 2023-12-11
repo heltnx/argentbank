@@ -70,7 +70,7 @@ const SignForm = () => {
     return (
         <form className='sign-in'>
             <div className="input-wrapper">
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">User name</label>
                 <input
                     type="text"
                     id="username"

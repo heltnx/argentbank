@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // images
 import argentBankLogo from '../../assets/img/argentBankLogo_edit.png';
 import user from '../../assets/img/user.png';
 import param from '../../assets/img/param.png';
-import off from '../../assets/img/off.png'
+import off from '../../assets/img/off.png';
 // style 
-import '../navbar/navbar.css'
-import './header-edit.css'
+import '../navbar/navbar.css';
+import './header-edit.css';
 // REDUX 
 import { useCurrentUserProfile } from '../../features/user/userProfile.js';
 
@@ -20,8 +21,10 @@ const HeaderEdit = () => {
             <nav className="main-nav nav-edit">
 
                 <div class="main-nav-logo">
-                    <img className="main-nav-logo-image" src={argentBankLogo} alt="Argent Bank Logo" />
-                    <h1 className="sr-only">Argent Bank</h1>
+                    <Link to="/" >
+                        <img className="main-nav-logo-image" src={argentBankLogo} alt="Argent Bank Logo" />
+                        <h1 className="sr-only">Argent Bank</h1>
+                    </Link>
                 </div>
 
                 <div class="main-nav-icon">
