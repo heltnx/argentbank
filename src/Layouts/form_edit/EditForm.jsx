@@ -31,6 +31,7 @@ const EditForm = () => {
                         type="text"
                         id="firstName"
                         defaultValue={currentUserProfile.firstName}
+                        disabled
                     />
                 </div>
 
@@ -40,6 +41,7 @@ const EditForm = () => {
                         type="text"
                         id="lastName"
                         defaultValue={currentUserProfile.lastName}
+                        disabled
                     />
                 </div>
                 <div className="input-wrapper button-wrapper">
