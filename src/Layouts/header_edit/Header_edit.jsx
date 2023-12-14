@@ -29,7 +29,7 @@ const HeaderEdit = () => {
 
                 <div className="main-nav-icon">
                     <div className='user-edit-profile'>
-                        <p>{currentUserProfile.username}</p>
+                        <p>{currentUserProfile.userName}</p>
                         <img className="user-circle" src={user} alt="user-circle" />
                     </div>
 
