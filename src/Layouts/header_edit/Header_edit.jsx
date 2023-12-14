@@ -20,16 +20,16 @@ const HeaderEdit = () => {
 
             <nav className="main-nav nav-edit">
 
-                <div class="main-nav-logo">
+                <div className="main-nav-logo">
                     <Link to="/" >
                         <img className="main-nav-logo-image" src={argentBankLogo} alt="Argent Bank Logo" />
                         <h1 className="sr-only">Argent Bank</h1>
                     </Link>
                 </div>
 
-                <div class="main-nav-icon">
+                <div className="main-nav-icon">
                     <div className='user-edit-profile'>
-                        <p>{currentUserProfile.userName}</p>
+                        <p>{currentUserProfile.username}</p>
                         <img className="user-circle" src={user} alt="user-circle" />
                     </div>
 

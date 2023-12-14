@@ -8,7 +8,7 @@ import { useCurrentUserProfile } from '../../features/user/userProfile';
 
 function EditForm(props) {
     return (
-        <div class="sign-in-content edit-form">
+        <div className="sign-in-content edit-form">
             <h2>Edit user info</h2>
 
             <form className='sign-in edit-form'>
