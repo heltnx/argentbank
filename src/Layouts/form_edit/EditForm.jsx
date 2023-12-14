@@ -6,34 +6,40 @@ import './edit-form.css'
 // REDUX
 import { useCurrentUserProfile } from '../../features/user/userProfile';
 
-function EditForm(props) {
+const EditForm = () => {
+
+    const currentUserProfile = useCurrentUserProfile();
+
     return (
         <div className="sign-in-content edit-form">
             <h2>Edit user info</h2>
 
             <form className='sign-in edit-form'>
-                <div className="input-wrapper">
-                    <label htmlFor="username">User name</label>
-                    <input
-                        type="text"
-                        id="username"
-                    />
 
-                </div>
                 <div className="input-wrapper">
-                    <label htmlFor="firstname">First Name</label>
+                    <label htmlFor="userName">User name</label>
                     <input
                         type="text"
-                        id="username"
-                        value={useCurrentUserProfile.firstname}
+                        id="userName"
+                        defaultValue={currentUserProfile.userName}
                     />
                 </div>
+
                 <div className="input-wrapper">
-                    <label htmlFor="firstname">Last Name</label>
+                    <label htmlFor="firstName">First Name</label>
                     <input
                         type="text"
-                        id="username"
-                        value={useCurrentUserProfile.lastname}
+                        id="firstName"
+                        defaultValue={currentUserProfile.firstName}
+                    />
+                </div>
+
+                <div className="input-wrapper">
+                    <label htmlFor="lastName">Last Name</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        defaultValue={currentUserProfile.lastName}
                     />
                 </div>
                 <div className="input-wrapper button-wrapper">
