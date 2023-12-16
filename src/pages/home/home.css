@@ -7,6 +7,12 @@
     position: relative;
 }
 
+@media screen and (max-width: 900px) {
+    .hero {
+        background-image: url('../../assets/img/bank-tree-825.jpeg');
+    }
+}
+
 .hero-content {
     position: relative;
     top: 2rem;
