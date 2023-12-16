@@ -4,8 +4,18 @@ import Layout from '../../Layouts/Layout';
 import SignForm from '../../Layouts/form_sign_in/SignForm';
 // style
 import './sign.css'
+import { useNavigate } from 'react-router-dom';
+
+import { useSelector } from "react-redux"
 
 const Sign = () => {
+    const navigate = useNavigate();
+    const isAuthenticated = useSelector((state) => state.user.userLoggedIn);
+
+    if (isAuthenticated) {
+        navigate("/user");
+    }
+
     return (
         <Layout className='sign'>
             <section className="main bg-dark">
