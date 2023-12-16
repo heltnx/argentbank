@@ -33,8 +33,21 @@ export const userApi = createApi({
                 },
             }),
         }),
+        // Point de terminaison pour modifier le username de l'utilisateur
+        updateUserName: builder.mutation({
+            query: ({ newUserName, token }) => ({
+                url: '/profile',
+                method: 'PUT',
+                body: { userName: newUserName },
+                headers: {
+                    'Content-Type': 'application/json',
+                    accept: "application/json",
+                    Authorization: token,
+                },
+            }),
+        }),
     }),
 });
 
 // Exporter les hooks générés par RTK Query pour les points de terminaison
-export const { useLoginMutation, useGetProfileMutation } = userApi;
+export const { useLoginMutation, useGetProfileMutation, useUpdateUserNameMutation } = userApi;
