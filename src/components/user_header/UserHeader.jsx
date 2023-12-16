@@ -1,23 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Button from '../button/Button';
+import EditForm from '../../Layouts/form_edit/EditForm';
 
-const HeaderComponent = ({ onEditNameClick }) => {
+const HeaderComponent = () => {
     // Utilise useSelector pour extraire currentUserProfile du state Redux
     const currentUserProfile = useSelector((state) => state.user.currentUserProfile);
+    const [editing, setEditing] = useState(false);
+
+    const onEditNameClick = () => {
+        setEditing(!editing);
+    }
 
     return (
         <div className="header">
-
-            {/* Affiche le message de bienvenue avec le nom de l'utilisateur */}
             <h1>Welcome back<br />{currentUserProfile.userName} !</h1>
 
-            {/* Utilise un lien de React Router pour rediriger vers la page d'édition du nom */}
-            <Link to="/edit_name" className='edit-button'>
-                <Button text="Edit Name" onClick={onEditNameClick} />
-            </Link>
-
+            {editing ? (
+                <EditForm onClose={onEditNameClick} />
+            ) : (
+                <Button className='edit-button' text="Edit Name" onClick={onEditNameClick} />
+            )}
         </div>
     )
 };
