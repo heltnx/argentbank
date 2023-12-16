@@ -23,8 +23,6 @@ const NavBar = () => {
         // Dispatche l'action "userLoggedOut" pour gérer la déconnexion dans le store Redux
         dispatch(userLoggedOut());
 
-        // Efface le localStorage
-        localStorage.clear();
     };
 
     return (

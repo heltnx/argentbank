@@ -28,6 +28,8 @@ export const userSlice = createSlice({
             state.userLoggedIn = false;
             // Réinitialise le profil de l'utilisateur actuel
             state.currentUserProfile = {};
+            // Efface le localStorage
+            localStorage.clear();
         },
     },
 })
