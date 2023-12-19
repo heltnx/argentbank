@@ -1,0 +1,39 @@
+.edit-form {
+    width: max-content;
+    margin-top: 0;
+    padding-top: 0;
+    color: black;
+}
+
+
+.edit-form input {
+    width: 50%;
+}
+
+.edit-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-top: 25px;
+}
+
+.edit-form .input-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.edit-form .button-wrapper {
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.edit-form label {
+    margin-right: 20px;
+    padding-top: 8px;
+}
+
+.edit-form button {
+    justify-content: space-between;
+    width: 48%;
+}
