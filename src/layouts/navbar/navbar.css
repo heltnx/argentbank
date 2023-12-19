@@ -36,3 +36,11 @@
 i.fa::before {
     margin-right: 5px;
 }
+
+@media screen and (max-width: 480px) {
+    .userAuthentify {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}

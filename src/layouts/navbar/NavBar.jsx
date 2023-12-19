@@ -39,7 +39,7 @@ const NavBar = () => {
                 {/* condition pour la connection */}
                 {isAuthenticated ? (
 
-                    <div>
+                    <div className='userAuthentify'>
                         {/* Lien vers la page du profil utilisateur */}
                         <Link to="/user" className="main-nav-item">
                             <i className="fa fa-user-circle"></i>
