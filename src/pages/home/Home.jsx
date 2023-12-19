@@ -1,6 +1,6 @@
 import React from 'react';
 // layouts
-import Layout from '../../Layouts/Layout';
+import Layout from '../../layouts/Layout';
 // images
 import ChatIcon from '../../assets/img/icon-chat.png';
 import MoneyIcon from '../../assets/img/icon-money.png';

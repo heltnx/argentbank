@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Button from '../button/Button';
-import EditForm from '../../Layouts/form_edit/EditForm';
+import EditForm from '../../layouts/form_edit/EditForm';
 
 const HeaderComponent = () => {
     // Utilise useSelector pour extraire currentUserProfile du state Redux

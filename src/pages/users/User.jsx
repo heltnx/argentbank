@@ -1,6 +1,6 @@
 import React from 'react';
 // layouts
-import Layout from '../../Layouts/Layout';
+import Layout from '../../layouts/Layout';
 // components
 import UserHeader from '../../components/user_header/UserHeader'
 import Account from '../../components/user_accompte/UserAccount';

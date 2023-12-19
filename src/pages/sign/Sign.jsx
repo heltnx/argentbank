@@ -1,7 +1,7 @@
 import React from 'react';
 // layouts
-import Layout from '../../Layouts/Layout';
-import SignForm from '../../Layouts/form_sign_in/SignForm';
+import Layout from '../../layouts/Layout';
+import SignForm from '../../layouts/form_sign_in/SignForm';
 // style
 import './sign.css'
 import { useNavigate } from 'react-router-dom';
