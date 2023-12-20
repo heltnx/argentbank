@@ -16,11 +16,11 @@ export const userSlice = createSlice({
     // Reducers
     reducers: {
         // Reducer pour définir l'utilisateur
-        setUser: (state, profile) => {
+        setUser: (state, action) => {
             // Met à jour l'état pour indiquer que l'utilisateur est connecté
             state.userLoggedIn = true;
             // Met à jour le profil de l'utilisateur actuel
-            state.currentUserProfile = profile.payload;
+            state.currentUserProfile = action.payload;
         },
         // Reducer pour déconnecter l'utilisateur
         userLoggedOut: (state) => {
@@ -32,7 +32,7 @@ export const userSlice = createSlice({
             localStorage.clear();
         },
     },
-})
+});
 
 // Les créateurs d'action sont générés pour chaque cas reducer.
 export const { setUser, userLoggedOut } = userSlice.actions
