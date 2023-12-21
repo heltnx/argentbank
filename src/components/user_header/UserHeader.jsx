@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import Button from '../button/Button';
 import EditForm from '../../layouts/form_edit/EditForm';
+import { useCurrentUserProfile } from '../../features/user/userProfile';
 
 const HeaderComponent = () => {
-    // Utilise useSelector pour extraire currentUserProfile du state Redux
-    const currentUserProfile = useSelector((state) => state.user.currentUserProfile);
+    const currentUserProfile = useCurrentUserProfile();
     const [editing, setEditing] = useState(false);
 
     const onEditNameClick = () => {

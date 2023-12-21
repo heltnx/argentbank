@@ -5,14 +5,14 @@ import argentBankLogo from '../../assets/img/argentBankLogo.png';
 // style
 import './navbar.css';
 // redux
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { userLoggedOut } from '../../features/user/userSlice.js';
+import { useCurrentUserProfile, useIsAuthenticated } from '../../features/user/userProfile';
 
 const NavBar = () => {
 
-    // Utilisation du hook useSelector pour obtenir l'état du store Redux
-    const isAuthenticated = useSelector((state) => state.user.userLoggedIn);
-    const currentUserProfile = useSelector((state) => state.user.currentUserProfile);
+    const isAuthenticated = useIsAuthenticated();
+    const currentUserProfile = useCurrentUserProfile();
 
     // Utilisation du hook useDispatch pour obtenir la fonction dispatch du store Redux
     const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 // redux
+import { useIsAuthenticated } from '../../features/user/userProfile';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 // imports
 import Layout from '../../layouts/Layout';
 import SignForm from '../../layouts/form_sign_in/SignForm';
@@ -9,7 +9,7 @@ import './sign.css';
 
 const Sign = () => {
     const navigate = useNavigate();
-    const isAuthenticated = useSelector((state) => state.user.userLoggedIn);
+    const isAuthenticated = useIsAuthenticated();
 
     useEffect(() => {
         if (isAuthenticated) {
