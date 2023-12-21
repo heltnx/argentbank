@@ -40,7 +40,7 @@ i.fa::before {
 @media screen and (max-width: 480px) {
     .userAuthentify {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: flex-start;
     }
 }
