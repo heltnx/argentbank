@@ -36,7 +36,7 @@ const SignForm = () => {
         });
 
         // Vérification de la réponse de la mutation de connexion
-        if (response.data !== undefined && response.data.body !== undefined) {
+        if (response.data?.body) {
             const token = response.data.body.token;
 
             // Stockage du token dans le localStorage
@@ -54,7 +54,7 @@ const SignForm = () => {
                 navigate("/user");
             } else {
                 // Gestion "profile.data.body" undefined
-                console.error("La réponse du profil est invalide.", profile);
+                console.error("La réponse du profil est invalide.", response);
             }
         } else {
             // Gestion "response.data.body" undefined

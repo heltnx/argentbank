@@ -1,4 +1,4 @@
-// Importer les fonctions createApi et fetchBaseQuery de la bibliothèque Redux Toolkit Query
+// createApi et fetchBaseQuery de la bibliothèque Redux Toolkit Query
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // Créer une API utilisateur avec RTK Query
@@ -7,9 +7,9 @@ export const userApi = createApi({
     reducerPath: 'userApi',
     // Définir la requête de base pour cette API
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/api/v1/user' }),
-    // Définir les points de terminaison pour cette API
+    // Définir les end-point pour cette API
     endpoints: (builder) => ({
-        // Point de terminaison pour la connexion de l'utilisateur
+        // end-point pour la connexion de l'utilisateur
         login: builder.mutation({
             query: (credentials) => ({
                 url: "/login",
@@ -20,7 +20,7 @@ export const userApi = createApi({
                 },
             }),
         }),
-        // Point de terminaison pour obtenir le profil de l'utilisateur
+        // end-points pour obtenir le profil de l'utilisateur
         getProfile: builder.mutation({
             query: (token) => ({
                 url: "/profile",
@@ -33,7 +33,7 @@ export const userApi = createApi({
                 },
             }),
         }),
-        // Point de terminaison pour modifier le username de l'utilisateur
+        // end-points pour modifier le username de l'utilisateur
         updateUserName: builder.mutation({
             query: ({ newUserName, token }) => ({
                 url: '/profile',
@@ -49,5 +49,5 @@ export const userApi = createApi({
     }),
 });
 
-// Exporter les hooks générés par RTK Query pour les points de terminaison
+// Exporter les hooks générés par RTK Query pour les end-points
 export const { useLoginMutation, useGetProfileMutation, useUpdateUserNameMutation } = userApi;
