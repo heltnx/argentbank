@@ -29,23 +29,23 @@ const SignForm = () => {
     const handleSignIn = async (e) => {
         e.preventDefault();
 
-        // Appel de la mutation de connexion avec email et mot de passe
+        // Appel la connexion avec email et mot de passe
         const response = await loginMutation({
             email: email,
             password: password,
         });
 
-        // Vérification de la réponse de la mutation de connexion
+        // Vérification de la réponse
         if (response.data?.body) {
             const token = response.data.body.token;
 
             // Stockage du token dans le localStorage
             localStorage.setItem("token", token);
 
-            // Appel de la mutation de profil avec le token
+            // Appel du profil avec le token
             const profile = await getProfileMutation(`Bearer ${token}`);
 
-            // Vérification de la réponse de la mutation de profil
+            // Vérification de la réponse de connection profil
             if (profile.data !== undefined && profile.data.body !== undefined) {
                 // Dispatch de l'action setUser avec le profil de l'utilisateur
                 dispatch(setUser(profile.data.body));
