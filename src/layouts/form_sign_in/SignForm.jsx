@@ -46,7 +46,7 @@ const SignForm = () => {
             const profile = await getProfileMutation(`Bearer ${token}`);
 
             // Vérification de la réponse de connection profil
-            if (profile.data !== undefined && profile.data.body !== undefined) {
+            if (response.data?.body) {
                 // Dispatch de l'action setUser avec le profil de l'utilisateur
                 dispatch(setUser(profile.data.body));
 
