@@ -13,7 +13,7 @@ const App = () => {
     const profile = await getProfileMutation(`Bearer ${token}`);
 
     // Vérification de la réponse de la mutation de profil
-    if (profile.data !== undefined && profile.data.body !== undefined) {
+    if (profile?.data?.body !== undefined) {
       // Dispatch de l'action setUser avec le profil de l'utilisateur
       dispatch(setUser(profile.data.body));
     }

@@ -47,7 +47,7 @@ const SignForm = () => {
 
             // Vérification de la réponse de connection profil
             if (response.data?.body) {
-                // Dispatch de l'action setUser avec le profil de l'utilisateur
+                // Dispatch de l'action userSlice/setUser avec le profil de l'utilisateur
                 dispatch(setUser(profile.data.body));
 
                 // Navigation vers la page de l'utilisateur
