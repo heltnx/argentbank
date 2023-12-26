@@ -9,9 +9,9 @@ const App = () => {
   const [getProfileMutation] = useGetProfileMutation();
   // Dispatcher des actions
   const dispatch = useDispatch();
+
   const getProfile = async (token) => {
     const profile = await getProfileMutation(`Bearer ${token}`);
-
     // Vérification de la réponse de la mutation de profil
     if (profile?.data?.body !== undefined) {
       // Dispatch de l'action setUser avec le profil de l'utilisateur
