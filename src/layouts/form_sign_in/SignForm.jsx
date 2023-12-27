@@ -1,72 +1,52 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
-// components
+import { useNavigate } from 'react-router-dom';
 import Checkbox from '../../components/checkbox/Checkbox';
 import Button from '../../components/button/Button';
-// style
-import './signForm.css'
-// REDUX
+import './signForm.css';
 import { useLoginMutation, useGetProfileMutation } from '../../services/user';
-import { useDispatch } from 'react-redux';
-import { setUser } from '../../features/user/userSlice';
+import { useUserActions } from '../../features/user/userActions';
 
 const SignForm = () => {
-    // "useState" pour gérer email mot de passe
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    // géstion des mutations de connexion et de profil
     const [loginMutation, { isError }] = useLoginMutation();
     const [getProfileMutation] = useGetProfileMutation();
-
-    // Dispatcher des actions
-    const dispatch = useDispatch();
-
-    // useNavigate pour la navigation
     const navigate = useNavigate();
 
-    // Fonction pour gérer la connexion
+    // Créez une instance de useUserActions
+    const { setUser } = useUserActions();
+
     const handleSignIn = async (e) => {
         e.preventDefault();
 
-        // Appel la connexion avec email et mot de passe
         const response = await loginMutation({
             email: email,
             password: password,
         });
 
-        // Vérification de la réponse
         if (response.data?.body) {
             const token = response.data.body.token;
 
-            // Stockage du token dans le localStorage
             localStorage.setItem("token", token);
 
-            // Appel du profil avec le token
             const profile = await getProfileMutation(`Bearer ${token}`);
 
-            // Vérification de la réponse de connection profil
-            if (response.data?.body) {
-                // Dispatch de l'action userSlice/setUser avec le profil de l'utilisateur
-                dispatch(setUser(profile.data.body));
+            if (profile.data?.body) {
+                // Utilisation de la fonction "setUser" de "useUserActions" au lieu de dispatch(setUser())
+                setUser(profile.data.body);
 
-                // Navigation vers la page de l'utilisateur
                 navigate("/user");
             } else {
-                // Gestion "profile.data.body" undefined
                 console.error("La réponse du profil est invalide.", response);
             }
         } else {
-            // Gestion "response.data.body" undefined
             console.error("La réponse de la requête est invalide.", response);
         }
 
-        // Réinitialisation des états locaux
         setEmail("");
         setPassword("");
     };
 
-    // Rendu du formulaire de connexion
     return (
         <form className='sign-in'>
             <div className="input-wrapper">
