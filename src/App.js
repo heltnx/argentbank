@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react';
 import Router from './router/router';
-// REDUX
 import { useGetProfileMutation } from './services/user';
-import { useDispatch } from 'react-redux';
-import { setUser } from './features/user/userSlice';
+import { useUserActions } from './features/user/userActions';
 
 const App = () => {
   const [getProfileMutation] = useGetProfileMutation();
-  // Dispatcher des actions
-  const dispatch = useDispatch();
+  const { setUser } = useUserActions();
 
   const getProfile = async (token) => {
-    const profile = await getProfileMutation(`Bearer ${token}`);
-    // Vérification de la réponse de la mutation de profil
-    if (profile?.data?.body !== undefined) {
-      // Dispatch de l'action setUser avec le profil de l'utilisateur
-      dispatch(setUser(profile.data.body));
+    try {
+      const profile = await getProfileMutation(`Bearer ${token}`);
+      if (profile?.data?.body !== undefined) {
+        setUser(profile.data.body);
+      }
+    } catch (error) {
+      console.error('Erreur lors de la récupération du profil :', error);
     }
-  }
+  };
+
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
