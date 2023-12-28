@@ -3,11 +3,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // Créer une API utilisateur avec RTK Query
 export const userApi = createApi({
-    // Définir le chemin du reducer pour cette API
+    // chemin du reducer pour cette API
     reducerPath: 'userApi',
-    // Définir la requête de base pour cette API
+    // requête de base pour cette API
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/api/v1/user' }),
-    // Définir les end-point pour cette API
+    // end-point pour cette API
     endpoints: (builder) => ({
         // end-point pour la connexion de l'utilisateur
         login: builder.mutation({

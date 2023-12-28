@@ -13,7 +13,7 @@ const SignForm = () => {
     const [getProfileMutation] = useGetProfileMutation();
     const navigate = useNavigate();
 
-    // Créez une instance de useUserActions
+    // instance de useUserActions
     const { setUser } = useUserActions();
 
     const handleSignIn = async (e) => {
@@ -32,7 +32,7 @@ const SignForm = () => {
             const profile = await getProfileMutation(`Bearer ${token}`);
 
             if (profile.data?.body) {
-                // Utilisation de la fonction "setUser" de "useUserActions" au lieu de dispatch(setUser())
+                // "setUser" de "useUserActions" au lieu de dispatch(setUser())
                 setUser(profile.data.body);
 
                 navigate("/user");

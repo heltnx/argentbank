@@ -9,7 +9,7 @@ const NavBar = () => {
     const isAuthenticated = useIsAuthenticated();
     const currentUserProfile = useCurrentUserProfile();
 
-    // Créez une instance de useUserActions
+    // instance de useUserActions
     const { userLoggedOut } = useUserActions();
 
     // Utilisation la fonction userLoggedOut pour gérer la déconnexion
